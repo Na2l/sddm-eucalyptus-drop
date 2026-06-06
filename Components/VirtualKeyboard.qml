@@ -1,7 +1,7 @@
 // Copyright at EOF
 
-import QtQuick 2.11
-import QtQuick.VirtualKeyboard 2.3
+import QtQuick 2.15
+import QtQuick.VirtualKeyboard 2.15
 
 InputPanel {
     id: virtualKeyboard

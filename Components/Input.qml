@@ -1,9 +1,9 @@
 // Copyright at EOF
 
-import QtQuick 2.11
-import QtQuick.Layouts 1.11
-import QtQuick.Controls 2.4
-import Qt5Compat.GraphicalEffects
+import QtQuick 2.15
+import QtQuick.Layouts 1.15
+import QtQuick.Controls 2.15
+import QtGraphicalEffects 1.15
 
 Column {
     id: inputContainer
@@ -170,13 +170,14 @@ Column {
             selectByMouse: true
             horizontalAlignment: TextInput.AlignHCenter
             renderType: Text.QtRendering
+            color: config.InputTextColour != "" ? config.InputTextColour : root.palette.text
             onFocusChanged:{
                 if(focus)
                     selectAll()
             }
             background: Rectangle {
                 color: "transparent"
-                border.color: root.palette.text
+                border.color: config.InputTextColour != "" ? config.InputTextColour : root.palette.text
                 border.width: parent.activeFocus ? 2 : 1
                 radius: config.RoundCorners || 0
             }
@@ -222,9 +223,10 @@ Column {
             passwordCharacter: "•"
             passwordMaskDelay: config.ForceHideCompletePassword == "true" ? undefined : 500
             renderType: Text.QtRendering
+            color: config.InputTextColour != "" ? config.InputTextColour : root.palette.text
             background: Rectangle {
                 color: "transparent"
-                border.color: root.palette.text
+                border.color: config.InputTextColour != "" ? config.InputTextColour : root.palette.text
                 border.width: parent.activeFocus ? 2 : 1
                 radius: config.RoundCorners || 0
             }
@@ -454,13 +456,13 @@ Column {
                 font.pointSize: root.font.pointSize
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
-                opacity: 0.5
+                opacity: parseFloat(config.LoginButtonTextOpacity) || 0.8
             }
 
             background: Rectangle {
                 id: buttonBackground
-                color: "white"
-                opacity: 0.2
+                color: config.LoginButtonBackgroundColour != "" ? config.LoginButtonBackgroundColour : root.palette.text
+                opacity: parseFloat(config.LoginButtonBackgroundOpacity) || 0.3
                 radius: config.RoundCorners || 0
             }
 

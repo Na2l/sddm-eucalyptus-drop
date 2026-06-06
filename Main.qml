@@ -1,17 +1,17 @@
 // Copyright info at EOF
 
-import Qt5Compat.GraphicalEffects
-import QtQuick 2.11
-import QtQuick.Controls 2.4
-import QtQuick.Layouts 1.11
-import QtQuick.Window 2.11
+import QtGraphicalEffects 1.15
+import QtQuick 2.15
+import QtQuick.Controls 2.15
+import QtQuick.Layouts 1.15
+import QtQuick.Window 2.15
 import "Components"
 
 Pane {
     id: root
 
     height: config.ScreenHeight || Screen.height
-    width: config.ScreenWidth || Screen.ScreenWidth
+    width: config.ScreenWidth || Screen.width
 
     LayoutMirroring.enabled: config.ForceRightToLeft == "true" ? true : Qt.application.layoutDirection === Qt.RightToLeft
     LayoutMirroring.childrenInherit: true

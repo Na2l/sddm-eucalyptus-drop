@@ -1,8 +1,8 @@
 // Copyright info at EOF
 
-import QtQuick 2.11
-import QtQuick.Controls 2.4
-import Qt5Compat.GraphicalEffects
+import QtQuick 2.15
+import QtQuick.Controls 2.15
+import QtGraphicalEffects 1.15
 
 Item {
     id: sessionButton
@@ -64,7 +64,7 @@ Item {
         contentItem: Text {
             id: displayedItem
             text: (config.TranslateSession || (textConstantSession + ":")) + " " + selectSession.currentText
-            color: root.palette.text
+            color: config.SessionTextColour != "" ? config.SessionTextColour : root.palette.text
             verticalAlignment: Text.AlignVCenter
             anchors.left: parent.left
             anchors.leftMargin: 3

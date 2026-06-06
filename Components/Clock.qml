@@ -1,7 +1,7 @@
 // Copyright at EOF
 
-import QtQuick 2.11
-import QtQuick.Controls 2.4
+import QtQuick 2.15
+import QtQuick.Controls 2.15
 
 Column {
     id: clock
@@ -11,7 +11,7 @@ Column {
     Label {
         anchors.horizontalCenter: parent.horizontalCenter
         font.pointSize: config.HeaderText !=="" ? root.font.pointSize * 3 : 0
-        color: root.palette.text
+        color: config.HeaderTextColour != "" ? config.HeaderTextColour : root.palette.text
         renderType: Text.QtRendering
         text: config.HeaderText
     }
@@ -20,8 +20,8 @@ Column {
         id: timeLabel
         anchors.horizontalCenter: parent.horizontalCenter
         font.pointSize: root.font.pointSize * 3
-        color: root.palette.text
         renderType: Text.QtRendering
+        color: config.ClockColour != "" ? config.ClockColour : root.palette.text
         function updateTime() {
             text = new Date().toLocaleTimeString(Qt.locale(config.Locale),
                 config.HourFormat == "long" ? Locale.LongFormat :
@@ -32,8 +32,8 @@ Column {
     Label {
         id: dateLabel
         anchors.horizontalCenter: parent.horizontalCenter
-        color: root.palette.text
         renderType: Text.QtRendering
+        color: config.ClockColour != "" ? config.ClockColour : root.palette.text
         function updateDate() {
             text = new Date().toLocaleDateString(Qt.locale(config.Locale),
                 config.DateFormat == "short" ? Locale.ShortFormat :
