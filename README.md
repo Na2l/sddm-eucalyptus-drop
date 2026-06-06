@@ -1,12 +1,29 @@
+# Eucalyptus Drop — Moon Edition
+
+![Centered moon theme](Previews/MoonCenter.png)
+
+A customised fork of [Eucalyptus Drop](https://gitlab.com/Matt.Jolly/sddm-eucalyptus-drop) with a centered moon layout, warm gold text, per-element colour controls, and Qt 5.15 targeting for Ubuntu 24.04+.
+
+## What's changed from upstream
+
+- Qt 5.15 imports (targets Ubuntu 24.04 SDDM; original used Qt 6)
+- Per-element colour overrides: `HeaderTextColour`, `ClockColour`, `InputTextColour`, `SessionTextColour`
+- Login button config: `LoginButtonBackgroundColour`, `LoginButtonBackgroundOpacity`, `LoginButtonTextOpacity`
+- Centered form + moon layout with dark bars, no blur
+- Fixed `Screen.ScreenWidth` typo in Main.qml
+- `.gitignore` for local backgrounds
+
+> 🖼️ Background image from [Unsplash](https://images.unsplash.com/photo-1754912376130-8c77d34a17f8?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&dl=sreeram-ravishankar-PA9_lgS5BWw-unsplash.jpg)
+
+## Credits
+
+- **Original theme**: [Eucalyptus Drop](https://gitlab.com/Matt.Jolly/sddm-eucalyptus-drop) by [Matt Jolly](https://gitlab.com/Matt.Jolly)
+- **Original SDDM Sugar Candy**: [Marian Arlt](https://github.com/MarianArlt)
+- **Moon Edition customisations**: [Naal](https://github.com/Na2l)
+
+---
+
 # Readme
-
-Eucalyptus Drop is an enhanced fork of SDDM Sugar Candy by Marian Arlt.
-
-This theme focuses on a straightforward user experience and superb functionality while offering a great degree of customisation.
-
-![Out-of-the-box configuration](Previews/sddm-eucalyptus-drop.png)
-
-Eucalyptus Drop should work on any SDDM installation / Linux distribution, provided dependencies are met.
 
 ## Installation
 
